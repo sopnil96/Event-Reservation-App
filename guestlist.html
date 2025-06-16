@@ -3,35 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact - Event Reservation App</title>
+  <title>Guest List - Event Reservation App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Event Reservation App</h1
-    <p>"We’re here to help you."</p>
+    <h1>Event Reservation App</h1>
+    <p>"See who’s joining the fun!"</p>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="reservation.html">Reserve</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="guestlist.html">Guest List</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="guestlist.html" class="active">Guest List</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-  
+
   <main>
-    <h2>Contact Us</h2>
-    <p>
-      Have questions or need assistance? Reach out and we’ll get back to you promptly!
-    </p>
-    <p>Email: <a href="mailto:support@eventapp.com">support@eventapp.com</a></p>
-    <p>Phone: +1 (555) 123-4567</p>
+    <h2>Confirmed Guests</h2>
+    <div class="guest-list" id="guestList">
+      <h3>Guest Attendees</h3>
+      <ul id="guestUl"></ul>
+    </div>
   </main>
-  
+
   <footer>
     <p>© 2025 Event Reservation App. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
