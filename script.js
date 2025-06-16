@@ -15,3 +15,20 @@ const successMessage = document.getElementById('successMessage');
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
+
+form?.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // Reset error messages
+  nameError.textContent = '';
+  emailError.textContent = '';
+  ticketsError.textContent = '';
+  successMessage.style.display = 'none';
+
+  let valid = true;
+
+  // Validate name
+  if (!nameInput.value.trim()) {
+    nameError.textContent = 'Please enter your full name.';
+    valid = false;
+  }
