@@ -155,3 +155,26 @@ button[type="submit"]:hover {
   box-shadow: 0 10px 25px rgba(255,87,34,0.7);
   transform: translateY(-3px) scale(1.05);
 }
+
+/* Error message */
+.error-message {
+  color: #d32f2f;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Success message */
+#successMessage {
+  margin-top: 1rem;
+  text-align: center;
+  color: #388e3c;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Guest list */
+#guestUl {
+  list-style: none;
+  margin-top: 2rem;
+  padding: 0;
+}
