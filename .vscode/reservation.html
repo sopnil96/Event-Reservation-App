@@ -23,3 +23,21 @@
   
   <main>
     <h2>Reserve Your Tickets</h2>
+    <form id="reservationForm" novalidate>
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+      <div class="error" id="nameError"></div>
+
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+      <div class="error" id="emailError"></div>
+
+      <label for="tickets">Number of Tickets *</label>
+      <select id="tickets" name="tickets" required>
+        <option value="">Select tickets</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
