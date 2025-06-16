@@ -118,3 +118,21 @@ label {
   font-weight: 600;
   color: #004d40;
 }
+
+input[type="text"],
+input[type="email"],
+select {
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  border: 2.5px solid #4db6ac;
+  border-radius: 25px;
+  transition: border-color 0.3s ease;
+  outline-offset: 2px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border-color: #00796b;
+  box-shadow: 0 0 8px #00796baa;
+}
