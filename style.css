@@ -48,3 +48,23 @@ nav ul {
   gap: 1.8rem;
   list-style: none;
 }
+
+nav a {
+  color: #004d40;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  background: #a7ffeb;
+  box-shadow: 0 5px 12px rgba(167,255,235,0.5);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+nav a:hover,
+nav a.active {
+  background: #00796b;
+  color: #e0f2f1;
+  box-shadow: 0 8px 20px rgba(0,121,107,0.6);
+  transform: translateY(-4px) scale(1.05);
+}
