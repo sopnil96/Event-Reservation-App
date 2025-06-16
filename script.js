@@ -49,3 +49,38 @@ form?.addEventListener('submit', (e) => {
   // Reset form
   form.reset();
 });
+
+// Guest list display
+const guestUl = document.getElementById('guestUl');
+
+if (guestUl) {
+  const reservations = JSON.parse(localStorage.getItem('reservations') || '[]');
+
+  if (reservations.length === 0) {
+    guestUl.innerHTML = '<li>No reservations yet. Be the first!</li>';
+  } else {
+    guestUl.innerHTML = '';
+
+    reservations.forEach((res, index) => {
+      const li = document.createElement('li');
+      li.textContent = `${res.name} (${res.email}) — Tickets: ${res.tickets}`;
+
+      // Add a remove button
+      const removeBtn = document.createElement('button');
+      removeBtn.textContent = 'Remove';
+      removeBtn.title = 'Remove this reservation';
+
+      removeBtn.addEventListener('click', () => {
+        reservations.splice(index, 1);
+        localStorage.setItem('reservations', JSON.stringify(reservations));
+        li.remove();
+        if (reservations.length === 0) {
+          guestUl.innerHTML = '<li>No reservations yet. Be the first!</li>';
+        }
+      });
+
+      li.appendChild(removeBtn);
+      guestUl.appendChild(li);
+    });
+  }
+}
