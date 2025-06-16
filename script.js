@@ -32,3 +32,20 @@ form?.addEventListener('submit', (e) => {
     nameError.textContent = 'Please enter your full name.';
     valid = false;
   }
+  Add name validation
+
+  reservations.push({
+    name: nameInput.value.trim(),
+    email: emailInput.value.trim(),
+    tickets: ticketsInput.value
+  });
+
+  localStorage.setItem('reservations', JSON.stringify(reservations));
+
+  // Show success message
+  successMessage.style.display = 'block';
+  successMessage.textContent = `Thank you, ${nameInput.value.trim()}! Your reservation for ${ticketsInput.value} ticket(s) is confirmed.`;
+
+  // Reset form
+  form.reset();
+});
