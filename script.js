@@ -19,3 +19,21 @@ function isValidEmail(email) {
 
 form?.addEventListener('submit', (e) => {
   e.preventDefault();
+  
+  // Reset error messages
+  nameError.textContent = '';
+  emailError.textContent = '';
+  ticketsError.textContent = '';
+  successMessage.style.display = 'none';
+
+  let valid = true;
+
+  const nameValue = nameInput.value.trim();
+  const emailValue = emailInput.value.trim();
+  const ticketsValue = parseInt(ticketsInput.value, 10);
+
+  // Validate name
+  if (!nameValue) {
+    nameError.textContent = 'Please enter your full name.';
+    valid = false;
+  }
