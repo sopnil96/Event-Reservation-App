@@ -37,3 +37,23 @@ form?.addEventListener('submit', (e) => {
     nameError.textContent = 'Please enter your full name.';
     valid = false;
   }
+
+  // Validate email
+  if (!isValidEmail(emailValue)) {
+    emailError.textContent = 'Please enter a valid email address.';
+    valid = false;
+  }
+
+  // Validate tickets
+  if (isNaN(ticketsValue) || ticketsValue <= 0) {
+    ticketsError.textContent = 'Please enter a valid number of tickets.';
+    valid = false;
+  }
+
+  if (valid) {
+    // Save the reservation
+    reservations.push({
+      name: nameValue,
+      email: emailValue,
+      tickets: ticketsValue
+    });
