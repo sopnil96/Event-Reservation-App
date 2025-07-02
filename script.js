@@ -76,3 +76,19 @@ const guestUl = document.getElementById('guestUl');
 
 function displayGuestList() {
   if (!guestUl) return;
+  
+  const storedReservations = JSON.parse(localStorage.getItem('reservations') || '[]');
+  guestUl.innerHTML = '';
+
+  if (storedReservations.length === 0) {
+    guestUl.innerHTML = '<li>No reservations yet. Be the first!</li>';
+    return;
+  }
+
+  storedReservations.forEach((res, index) => {
+    const li = document.createElement('li');
+    li.textContent = `${res.name} (${res.email}) — Tickets: ${res.tickets}`;
+
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'Remove';
+    removeBtn.title = 'Remove this reservation';
