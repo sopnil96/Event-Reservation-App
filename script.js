@@ -57,3 +57,22 @@ form?.addEventListener('submit', (e) => {
       email: emailValue,
       tickets: ticketsValue
     });
+    localStorage.setItem('reservations', JSON.stringify(reservations));
+
+    // Show success message
+    successMessage.style.display = 'block';
+    successMessage.textContent = `Thank you, ${nameValue}! Your reservation for ${ticketsValue} ticket(s) is confirmed.`;
+
+    // Reset form
+    form.reset();
+
+    // Optional: refresh guest list
+    displayGuestList();
+  }
+});
+
+// Guest list display
+const guestUl = document.getElementById('guestUl');
+
+function displayGuestList() {
+  if (!guestUl) return;
