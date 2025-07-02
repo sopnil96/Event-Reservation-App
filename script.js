@@ -92,3 +92,18 @@ function displayGuestList() {
     const removeBtn = document.createElement('button');
     removeBtn.textContent = 'Remove';
     removeBtn.title = 'Remove this reservation';
+    
+    removeBtn.addEventListener('click', () => {
+      const updatedReservations = JSON.parse(localStorage.getItem('reservations') || '[]');
+      updatedReservations.splice(index, 1);
+      localStorage.setItem('reservations', JSON.stringify(updatedReservations));
+      displayGuestList();
+    });
+
+    li.appendChild(removeBtn);
+    guestUl.appendChild(li);
+  });
+}
+
+// Initial call to populate the guest list
+displayGuestList();
